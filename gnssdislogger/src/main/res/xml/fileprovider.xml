@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path
+        name="int"
+        path="." />
+    <external-files-path
+        name="ext"
+        path="/" />
+    <external-path
+        name="extpath"
+        path="/" />
+</paths>

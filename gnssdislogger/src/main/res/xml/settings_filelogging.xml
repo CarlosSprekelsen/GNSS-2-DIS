@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="settings_filelogging"
+    android:summary="@string/pref_logging_summary"
+    android:title="@string/pref_logging_title">
+
+    <PreferenceCategory android:title="@string/file_format_settings">
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="log_eag_enabled"
+            android:summary="@string/log_eag_summary"
+            android:title="@string/log_eag_title" />
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="log_gpx"
+            android:summary="@string/log_gpx_summary"
+            android:title="@string/log_gpx_title" />
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="log_gpx_11"
+            android:summary="@string/log_gpx_11_summary"
+            android:title="@string/log_gpx_11_title" />
+        <SwitchPreferenceCompat
+            android:key="log_kml"
+            android:summary="@string/log_kml_summary"
+            android:title="@string/log_kml_title" />
+        <SwitchPreferenceCompat
+            android:key="log_plain_text"
+            android:summary="@string/log_plain_text_summary"
+            android:title="@string/log_plain_text_title" />
+        <SwitchPreferenceCompat
+            android:key="log_geojson"
+            android:summary="@string/log_json_summary"
+            android:title="@string/log_json_title" />
+        <SwitchPreferenceCompat
+            android:key="log_nmea"
+            android:summary="@string/log_nmea_summary"
+            android:title="@string/log_nmea_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_filedetails_title">
+        <EditTextPreference
+            android:key="gnsslogger_folder"
+            android:summary="@string/gnsslogger_folder_summary"
+            android:title="@string/gnsslogger_folder_title" />
+        <ListPreference
+            android:defaultValue="onceaday"
+            android:entries="@array/filecreation_entries"
+            android:entryValues="@array/filecreation_values"
+            android:key="new_file_creation"
+            android:summary="@string/new_file_creation_summary"
+            android:title="@string/new_file_creation_title" />
+        <Preference
+            android:defaultValue="gnsslogger"
+            android:dialogMessage="@string/new_file_custom_message"
+            android:dialogTitle="@string/new_file_custom_title"
+            android:key="new_file_custom_name"
+            android:summary="@string/new_file_custom_summary"
+            android:title="@string/new_file_custom_title" />
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="new_file_custom_keep_changing"
+            android:summary="@string/new_file_custom_keep_changing_summary"
+            android:title="@string/new_file_custom_keep_changing_title" />
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="new_file_custom_each_time"
+            android:summary="@string/new_file_custom_each_time_summary"
+            android:title="@string/new_file_custom_each_time_title" />
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="new_file_prefix_serial"
+            android:summary="@string/new_file_prefix_serial_summary"
+            android:title="@string/new_file_prefix_serial_title" />
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

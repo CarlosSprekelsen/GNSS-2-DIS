@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="settings_onlinelogging"
+    android:summary="@string/pref_logging_summary"
+    android:title="@string/pref_logging_title">
+
+    <PreferenceCategory android:title="@string/live_format_settings">
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="log_dis_enabled"
+            android:summary="@string/log_dis_summary"
+            android:title="@string/log_dis_title" />
+        <SwitchPreferenceCompat
+            android:key="log_customurl_enabled"
+            android:summary="@string/log_customurl_summary"
+            android:title="@string/log_customurl_title" />
+
+    </PreferenceCategory>
+
+
+</androidx.preference.PreferenceScreen>

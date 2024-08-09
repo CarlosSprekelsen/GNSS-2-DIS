@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="gnsslogger_preferences">
+
+    <SwitchPreferenceCompat
+        android:key="startOnBootUp"
+        android:summary="@string/startOnBootUp_summary"
+        android:title="@string/startOnBootUp_title" />
+
+    <SwitchPreferenceCompat
+        android:key="startOnApplicationLaunch"
+        android:summary="@string/startOnApplicationLaunch_summary"
+        android:title="@string/startOnApplicationLaunch_title" />
+
+    <SwitchPreferenceCompat
+        android:key="useImperial"
+        android:summary="@string/display_imperial_summary"
+        android:title="@string/display_imperial_title" />
+
+    <ListPreference
+        android:key="coordinate_display_format"
+        android:title="@string/coordinate_display_format" />
+
+    <SwitchPreferenceCompat
+        android:key="hide_notification_buttons"
+        android:summary="@string/restart_required"
+        android:title="@string/hide_notification_buttons" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="hide_notification_from_status_bar"
+        android:summary="@string/restart_required"
+        android:title="@string/hide_notification_from_status_bar" />
+    <Preference
+        android:key="permissions_required"
+        android:title="@string/gnsslogger_permissions_rationale_title" />
+
+    <Preference
+        android:defaultValue="false"
+        android:key="enableDisableGps"
+        android:summary="@string/enabledisablegps_summary"
+        android:title="@string/enabledisablegps_title" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="debug_to_file"
+        android:summary="@string/debuglog_summary"
+        android:title="@string/debuglog_title" />
+
+    <Preference
+        android:enabled="true"
+        android:key="debuglogtoemail"
+        android:summary="@string/debuglog_attach_to_email_summary"
+        android:title="@string/debuglog_attach_to_email" />
+
+
+    <ListPreference
+        android:icon="@drawable/translate"
+        android:key="change_language"
+        android:summary="@string/change_language_summary"
+        android:title="@string/change_language_title" />
+
+
+    <Preference android:key="about_version_info" />
+
+
+</androidx.preference.PreferenceScreen>

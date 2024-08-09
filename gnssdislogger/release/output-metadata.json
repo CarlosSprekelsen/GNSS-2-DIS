@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "ets.acmi.gnssdislogger",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 103,
+      "versionName": "103",
+      "outputFile": "gnssdislogger-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

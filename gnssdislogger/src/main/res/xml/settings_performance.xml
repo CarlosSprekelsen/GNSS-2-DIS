@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/pref_performance_title">
+
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="log_satellite_locations"
+        android:summary="@string/listeners_gps_summary"
+        android:title="@string/listeners_gps_title" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="log_network_locations"
+        android:summary="@string/listeners_cell_summary"
+        android:title="@string/listeners_cell_title" />
+
+    <SwitchPreferenceCompat
+        android:key="log_passive_locations"
+        android:summary="@string/listeners_passive_summary"
+        android:title="@string/listeners_passive_title" />
+
+
+    <EditTextPreference
+        android:defaultValue="0"
+        android:dialogTitle="@string/time_before_logging_dialog_title"
+        android:hint="@string/time_before_logging_hint"
+        android:inputType="number"
+        android:key="time_before_logging"
+        android:maxLength="4"
+        android:summary="@string/time_before_logging_summary"
+        android:title="@string/time_before_logging_title" />
+
+    <SwitchPreferenceCompat
+        android:key="keep_fix"
+        android:summary="@string/keep_fix_summary"
+        android:title="@string/keep_fix_title" />
+
+
+    <EditTextPreference
+        android:defaultValue="0"
+        android:dialogTitle="@string/settings_distance_in_meters"
+        android:hint="@string/settings_enter_meters"
+        android:inputType="number"
+        android:key="distance_before_logging"
+        android:maxLength="4"
+        android:summary="@string/distance_filter_summary"
+        android:title="@string/distance_filter_title" />
+
+    <EditTextPreference
+        android:defaultValue="40"
+        android:dialogTitle="@string/settings_accuracy_in_meters"
+        android:hint="@string/settings_enter_meters"
+        android:inputType="number"
+        android:key="accuracy_before_logging"
+        android:maxLength="4"
+        android:summary="@string/accuracy_filter_summary"
+        android:title="@string/accuracy_filter_title" />
+
+    <EditTextPreference
+        android:defaultValue="60"
+        android:dialogTitle="@string/time_before_logging_dialog_title"
+        android:hint="@string/time_before_logging_hint"
+        android:inputType="number"
+        android:key="retry_time"
+        android:maxLength="4"
+        android:summary="@string/retry_time_summary"
+        android:title="@string/retry_time_title" />
+
+    <EditTextPreference
+        android:defaultValue="120"
+        android:dialogTitle="@string/time_before_logging_dialog_title"
+        android:hint="@string/time_before_logging_hint"
+        android:inputType="number"
+        android:key="absolute_timeout"
+        android:maxLength="4"
+        android:summary="@string/absolute_timeout_summary"
+        android:title="@string/absolute_timeout_title" />
+
+    <PreferenceCategory android:title="Altitude">
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="altitude_subtract_geoid_height"
+            android:summary="@string/altitude_subtract_geoid_height_summary"
+            android:title="@string/altitude_subtract_geoid_height_title" />
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/settings_enter_meters"
+            android:inputType="numberSigned"
+            android:key="altitude_subtract_offset"
+            android:summary="@string/altitude_subtract_offset_summary"
+            android:title="@string/altitude_subtract_offset_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_performance_activityrecognition">
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="activityrecognition_dontlogifstill"
+            android:summary="@string/activityrecognition_dont_log_if_still_summary"
+            android:title="@string/activityrecognition_dont_log_if_still" />
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

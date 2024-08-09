@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="dis_preferences">
+
+    <PreferenceCategory android:title="Mission Line-Up">
+        <ListPreference
+            android:defaultValue="3:1:225:06:01:21:Dismounted Infantry"
+            android:entries="@array/dis_enumeration_list"
+            android:entryValues="@array/dis_enumeration_value"
+            android:key="dis_enumeration"
+            android:summary="%1$s"
+            android:title="@string/dis_enumeration" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/dis_force_id_list"
+            android:entryValues="@array/dis_force_id_values"
+            android:key="dis_force_id"
+            android:summary="%1$s"
+            android:title="@string/dis_force_id" />
+        <EditTextPreference
+            android:dialogTitle="Callsign"
+            android:key="dis_marking"
+            android:summary="Entity Marking"
+            android:title="@string/dis_marking" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Server settings">
+        <EditTextPreference
+            android:dialogTitle="DIS UDP server"
+            android:inputType="textUri"
+            android:key="dis_udp_host"
+            android:summary="DIS Server"
+            android:title="@string/dis_udp_host" />
+
+        <EditTextPreference
+            android:dialogTitle="Server Port"
+            android:inputType="number"
+            android:key="dis_udp_port"
+            android:summary="DIS Port"
+            android:title="@string/dis_udp_port" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="DIS settings">
+        <EditTextPreference
+            android:dialogTitle="DIS Site"
+            android:inputType="number"
+            android:key="dis_site"
+            android:summary="Site"
+            android:title="@string/dis_site" />
+        <EditTextPreference
+            android:dialogTitle="DIS Application"
+            android:inputType="number"
+            android:key="dis_application"
+            android:summary="Application"
+            android:title="@string/dis_application" />
+        <EditTextPreference
+            android:dialogTitle="DIS Exercise"
+            android:inputType="number"
+            android:key="dis_exercise"
+            android:summary="DIS Exercise"
+            android:title="@string/dis_exercise" />
+        <EditTextPreference
+            android:dialogTitle="DIS Entity Id"
+            android:inputType="number"
+            android:key="dis_entity_id"
+            android:summary="%s"
+            android:title="@string/dis_entity_id" />
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="ftp_preferences">
+
+    <SwitchPreferenceCompat
+        android:key="ftp_enabled"
+        android:title="@string/autoUpload_enabled" />
+
+
+    <EditTextPreference
+        android:dialogTitle="@string/ftp_setup_title"
+        android:key="ftp_server"
+        android:summary="@string/ftp_server"
+        android:title="@string/ftp_setup_title" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/ftp_username"
+        android:key="ftp_username"
+        android:title="@string/ftp_username" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/ftp_password"
+        android:key="ftp_password"
+        android:inputType="textPassword"
+        android:title="@string/ftp_password" />
+
+    <EditTextPreference
+        android:defaultValue="GNSSLogger"
+        android:dialogTitle="@string/ftp_directory"
+        android:key="ftp_directory"
+        android:title="@string/ftp_directory" />
+
+    <Preference
+        android:key="ftp_test"
+        android:summary="@string/ftp_test_summary"
+        android:title="@string/ftp_setup_title" />
+
+    <PreferenceCategory android:title="@string/ftp_advanced_settings">
+        <EditTextPreference
+            android:defaultValue="21"
+            android:dialogTitle="@string/ftp_port"
+            android:inputType="number"
+            android:key="ftp_port"
+            android:title="@string/ftp_port" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="ftp_useftps"
+            android:summary="@string/ftp_useftps_summary"
+            android:title="@string/ftp_useftps" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/ftp_ssltls"
+            android:entries="@array/ftp_ssltls_entries"
+            android:entryValues="@array/ftp_ssltls_values"
+            android:key="ftp_ssltls"
+            android:shouldDisableView="false"
+            android:summary="@string/ftp_ssltls_summary"
+            android:title="@string/ftp_ssltls" />
+
+        <Preference
+            android:key="ftp_validatecustomsslcert"
+            android:title="@string/ssl_certificate_validate" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="ftp_implicit"
+            android:title="@string/ftp_implicit" />
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

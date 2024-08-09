@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="gnsslogger_preferences"
+    android:summary="@string/pref_autoUpload_summary"
+    android:title="@string/pref_autoUpload_title">
+
+
+    <SwitchPreferenceCompat
+        android:key="autoUpload_enabled"
+        android:summary="@string/autoUpload_enabled_summary"
+        android:title="@string/autoUpload_enabled" />
+
+
+    <EditTextPreference
+        android:defaultValue="60"
+        android:hint="@string/autoUpload_frequency_hint"
+        android:inputType="number"
+        android:key="autoUpload_frequency_minutes"
+        android:maxLength="4"
+        android:summary="@string/autoUpload_frequency_summary"
+        android:title="@string/autoUpload_frequency" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="autoUpload_frequency_whenstoppressed"
+        android:title="@string/autoemail_frequency_whenistop"
+
+        />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="autoUpload_send_zip"
+        android:summary="@string/autoUpload_send_zip_summary"
+        android:title="@string/autoUpload_send_zip_title" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="autoUpload_wifi_only"
+        android:title="@string/autoUpload_wifi_only_title" />
+
+    <PreferenceCategory android:title="@string/autoUpload_targets_category">
+        <Preference
+            android:key="sftp_setup"
+            android:title="@string/sftp_setup_title" />
+        <Preference
+            android:key="ftp_setup"
+            android:title="@string/ftp_setup_title" />
+
+
+    </PreferenceCategory>
+
+
+</androidx.preference.PreferenceScreen>

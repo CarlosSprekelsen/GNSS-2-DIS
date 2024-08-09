@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item android:title="@string/settings_screen_name">
+            <menu>
+                <item
+                    android:id="@+id/settings_general"
+                    android:icon="@drawable/general_settings"
+                    android:title="@string/pref_general_title" />
+
+                <item
+                    android:id="@+id/setting_files"
+                    android:icon="@drawable/file"
+                    android:title="@string/file_format_settings" />
+
+                <item
+                    android:id="@+id/setting_live"
+                    android:icon="@drawable/live"
+                    android:title="@string/live_format_settings" />
+
+                <item
+                    android:id="@+id/setting_performance"
+                    android:icon="@drawable/performance"
+                    android:title="@string/pref_performance_title" />
+
+                <item
+                    android:id="@+id/setting_autosend"
+                    android:icon="@drawable/upload"
+                    android:title="@string/menu_upload" />
+            </menu>
+        </item>
+    </group>
+    <item
+        android:id="@+id/mnuFaq"
+        android:icon="@drawable/help"
+        android:title="@string/menu_faq"/>
+    <item
+        android:id="@+id/exit_app"
+        android:icon="@drawable/exit"
+        android:title="@string/menu_exit" />
+
+</menu>
