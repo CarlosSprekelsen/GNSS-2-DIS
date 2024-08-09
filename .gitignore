@@ -95,6 +95,7 @@ build/Release
 
 # Internal documentation
 docs
+signatures
 
 # Dependency directories
 node_modules
