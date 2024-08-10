@@ -93,9 +93,10 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Internal documentation
+# Internal documentation & API keys
 docs
 signatures
+src/release/res/values/google_maps_api.xml
 
 # Dependency directories
 node_modules
