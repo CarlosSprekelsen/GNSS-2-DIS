@@ -35,7 +35,7 @@ import ets.acmi.gnssdislogger.common.events.CommandEvents;
 import ets.acmi.gnssdislogger.common.events.ServiceEvents;
 import ets.acmi.gnssdislogger.common.slf4j.Logs;
 
-public class FragmentMapsView extends FragmentGenericView {
+public class FragmentGoogleMapsView extends FragmentGenericView {
 
     private MapView mMapView;
     private GoogleMap googleMap;
@@ -43,17 +43,17 @@ public class FragmentMapsView extends FragmentGenericView {
     private final PreferenceHelper preferenceHelper = PreferenceHelper.getInstance();
     private final Session session = Session.getInstance();
     private boolean firstPosition;
-    private static final Logger LOG = Logs.of(FragmentMapsView.class);
+    private static final Logger LOG = Logs.of(FragmentGoogleMapsView.class);
 
-    public static FragmentMapsView newInstance() {
-        return new FragmentMapsView();
+    public static FragmentGoogleMapsView newInstance() {
+        return new FragmentGoogleMapsView();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_maps_view, container, false);
 
-        mMapView = rootView.findViewById(R.id.mapView);
+        mMapView = rootView.findViewById(R.id.googlemapView);
         mMapView.onCreate(savedInstanceState);
         firstPosition = true;
         mMapView.onResume(); // needed to get the map to display immediately

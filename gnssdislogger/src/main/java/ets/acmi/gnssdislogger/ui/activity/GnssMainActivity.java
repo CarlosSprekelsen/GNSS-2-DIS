@@ -24,7 +24,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.FileProvider;
-import androidx.fragment.app.Fragment;
+//import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -57,9 +57,10 @@ import ets.acmi.gnssdislogger.senders.FileSender;
 import ets.acmi.gnssdislogger.senders.FileSenderFactory;
 import ets.acmi.gnssdislogger.ui.Dialogs;
 import ets.acmi.gnssdislogger.ui.fragments.views.BottomNavigationDrawer;
-import ets.acmi.gnssdislogger.ui.fragments.views.FragmentGenericView;
+//import ets.acmi.gnssdislogger.ui.fragments.views.FragmentGenericView;
 import ets.acmi.gnssdislogger.ui.fragments.views.FragmentLogView;
-import ets.acmi.gnssdislogger.ui.fragments.views.FragmentMapsView;
+import ets.acmi.gnssdislogger.ui.fragments.views.FragmentGoogleMapsView;
+import ets.acmi.gnssdislogger.ui.fragments.views.FragmentOsmDroidView;
 
 public class GnssMainActivity extends AppCompatActivity {
     private static final Logger LOG = Logs.of(GnssMainActivity.class);
@@ -128,6 +129,7 @@ public class GnssMainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NotNull String[] permissions, @NotNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         Systems.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
@@ -298,14 +300,15 @@ public class GnssMainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         if (session.showMapFragment()) {
-            transaction.replace(R.id.view_container, FragmentMapsView.newInstance());
+           // transaction.replace(R.id.view_container, FragmentGoogleMapsView.newInstance());
+            transaction.replace(R.id.view_container, FragmentOsmDroidView.newInstance());
         } else {
             transaction.replace(R.id.view_container, FragmentLogView.newInstance());
         }
         transaction.commitAllowingStateLoss();
     }
 
-
+/*
     private FragmentGenericView getCurrentFragment() {
 
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.view_container);
@@ -314,7 +317,7 @@ public class GnssMainActivity extends AppCompatActivity {
         }
         return null;
     }
-
+*/
     private void enableDisableMenuItems() {
 
         onWaitingForLocation(session.isWaitingForLocation());
@@ -471,7 +474,7 @@ public class GnssMainActivity extends AppCompatActivity {
                             chosenFiles.add(new File(gpxFolder, files[Integer.parseInt(item.toString())]));
                         }
 
-                        if (chosenFiles.size() > 0) {
+                        if (!chosenFiles.isEmpty()) {
                             Dialogs.progress(GnssMainActivity.this, getString(R.string.please_wait), getString(R.string.please_wait));
                             userInvokedUpload = true;
                             sender.uploadFile(chosenFiles);
@@ -532,8 +535,8 @@ public class GnssMainActivity extends AppCompatActivity {
                                 intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.sharing_mylocation));
                                 if (session.hasValidLocation()) {
                                     String bodyText = String.format("http://maps.google.com/maps?q=%s,%s",
-                                            String.valueOf(session.getCurrentLatitude()),
-                                            String.valueOf(session.getCurrentLongitude()));
+                                            session.getCurrentLatitude(),
+                                            session.getCurrentLongitude());
                                     intent.putExtra(Intent.EXTRA_TEXT, bodyText);
                                     intent.putExtra("sms_body", bodyText);
                                     startActivity(Intent.createChooser(intent, getString(R.string.sharing_via)));

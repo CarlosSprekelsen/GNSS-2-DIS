@@ -8,7 +8,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.1'
+        classpath 'com.android.tools.build:gradle:8.5.2'
         classpath 'org.jacoco:org.jacoco.core:0.7.4.201502262128'
         classpath "com.moowork.gradle:gradle-node-plugin:0.13"
     }
@@ -135,15 +135,16 @@ android {
 dependencies {
 
     implementation 'androidx.preference:preference:1.2.1'
-    implementation 'com.google.android.gms:play-services-base:18.3.0'
-    implementation 'com.google.android.gms:play-services-location:21.0.1'
-    implementation 'com.google.android.gms:play-services-auth:20.7.0'
-    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    implementation 'com.google.android.gms:play-services-base:18.5.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    implementation 'com.google.android.gms:play-services-auth:21.2.0'
+    //Map views
+    implementation 'com.google.android.gms:play-services-maps:19.0.0'
+    implementation("org.osmdroid:osmdroid-android:6.1.13")
 
     // Lifecycle (fixes errors on Android 12)
-
-    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.8.4'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4'
 
     // Google material
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
